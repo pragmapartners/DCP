@@ -1,0 +1,7 @@
+block.settings.crumby_crumby:
+  type: block_settings
+  label: 'Crumby block'
+  mapping:
+    example:
+      type: string
+      label: Example

@@ -1,0 +1,25 @@
+{% set classes = [
+	'breadcrumb',
+] %}
+
+{% if breadcrumb %}
+	<nav role="navigation" aria-label="breadcrumb">
+		<ol{{attributes.addClass(classes)}}>
+			{% for item in breadcrumb %}
+				{% if item.url %}
+					<li class="breadcrumb-item">
+						{% if not loop.first %}
+							<span class="divider" aria-hidden="true">{{separator}}</span>
+						{% endif %}
+						<a href="{{ item.url }}">{{ item.text }}</a>
+					</li>
+				{% else %}
+					<li class="breadcrumb-item active">
+						<span class="divider" aria-hidden="true">{{separator}}</span>
+						{{ item.text }}
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ol>
+	</nav>
+{% endif %}

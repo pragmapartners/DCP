@@ -1,0 +1,14 @@
+{
+  "name": "pragma/dcp",
+  "description": "a collection of drupal components",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex M",
+      "email": "alex.monaghan@pragma.com.au"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {}
+}
