@@ -1,0 +1,5 @@
+name: Drupal component plugins
+type: module
+description: 'Enables the creation of webforms and questionnaires.'
+package: Custom
+core_version_requirement: ^11.0
