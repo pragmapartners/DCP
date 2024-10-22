@@ -1,7 +1,7 @@
 {
   "name": "pragmapartners/dcp",
   "description": "a collection of drupal components",
-  "type": "library",
+  "type": "drupal-module",
   "license": "MIT",
   "authors": [
     {
@@ -9,6 +9,8 @@
       "email": "alex.monaghan@pragma.com.au"
     }
   ],
-  "minimum-stability": "stable",
-  "require": {}
+  "minimum-stability": "dev",
+  "require": {
+    "drupal/core": "^10.3 || ^11.0"
+  }
 }
