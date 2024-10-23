@@ -1,5 +1,5 @@
 name: 'Crumby'
 type: module
 description: 'Creates a breadcrumb based on a selected menu'
-package: 'cer'
-core_version_requirement: ^11
+package: 'Pragma'
+core_version_requirement: ^10 || ^11
