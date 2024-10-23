@@ -1,17 +1,22 @@
 <?php
 
-function dcp_install() {
-    $module_installer = \Drupal::service('module_installer');
-    $module_installer->install([
-      'crumby',
-    ]);
+use Drupal;
+
+function dcp_install()
+{
+  $module_installer = Drupal::service('module_installer');
+  $module_installer->install([
+    'crumby',
+    'button',
+  ]);
 }
 
 /**
  * Implements hook_uninstall().
  */
-function dcp_uninstall() {
+function dcp_uninstall()
+{
   # Uninstall the module
-  $module_handler = \Drupal::service('module_installer');
+  $module_handler = Drupal::service('module_installer');
   $module_handler->uninstall(['crumby']);
 }
