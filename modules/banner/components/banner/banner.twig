@@ -1,0 +1,39 @@
+{% set banner_classes = [
+  'banner',
+  'fullwidth',
+  'banner-layout--' ~ banner.display,
+	banner_image.uri ? 'has-image',
+] %}
+
+{% set banner_attributes = create_attribute(attributes) %}
+
+<section{{banner_attributes.addClass(banner_classes)}}>
+	{% set background_image = {
+    '#theme': 'image',
+    '#uri': banner_image.uri,
+    '#alt': banner_image.alt,
+    '#attributes': {
+      'class': 'banner--image',
+    },
+  } %}
+
+	{% if banner_image.uri %}
+		<div class="image--wrapper">
+			{{ background_image }}
+		</div>
+	{% endif %}
+
+	<div class="banner--content">
+    <div class="container">
+      {{ drupal_entity('block', 'crumby') }}
+			<div class="banner--content-container">
+        <div class="banner--title">
+          {{ banner_heading|raw }}
+        </div>
+				<div class="banner--body">
+					{{ banner_body.value|raw }}
+				</div>
+			</div>
+    </div>
+	</div>
+</section>

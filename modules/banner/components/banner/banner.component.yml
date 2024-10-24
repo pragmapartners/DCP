@@ -1,0 +1,12 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/11.1.x/core/modules/sdc/src/metadata.schema.json
+name: Banner
+description: A banner component that renders out slide components.
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    banner:
+      type: object
+      title: Item
+      description: An array of items to display in the banner

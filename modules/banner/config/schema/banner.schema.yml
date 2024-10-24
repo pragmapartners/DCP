@@ -1,0 +1,7 @@
+block.settings.banner_banner:
+  type: block_settings
+  label: 'Banner block'
+  mapping:
+    example:
+      type: string
+      label: Example

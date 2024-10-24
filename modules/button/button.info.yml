@@ -1,5 +1,5 @@
 name: 'button'
 type: module
 description: 'A basic button component'
-package: pragma
+package: Pragma
 core_version_requirement: ^10 || ^11

@@ -4,4 +4,4 @@ description: 'Enables the creation of webforms and questionnaires.'
 package: 'Pragma'
 core_version_requirement: ^10 || ^11.0
 dependencies:
-  - pragmapartners/dsh
+  - 'drupal:dhs'

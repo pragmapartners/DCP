@@ -8,6 +8,7 @@ function dcp_install()
   $module_installer->install([
     'crumby',
     'button',
+    'banner'
   ]);
 }
 
@@ -18,5 +19,5 @@ function dcp_uninstall()
 {
   # Uninstall the module
   $module_handler = Drupal::service('module_installer');
-  $module_handler->uninstall(['crumby']);
+  $module_handler->uninstall(['dhs', 'crumby']);
 }

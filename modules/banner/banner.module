@@ -1,0 +1,15 @@
+<?php
+
+function banner_theme($existing, $type, $theme, $path)
+{
+  return [
+    'banner' => [
+      'variables' => [
+        'banner_image' => [],
+        'banner_heading' => 'default heading',
+        'banner_body' => 'default body'
+      ],
+    ],
+  ];
+}
+
