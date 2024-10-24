@@ -17,8 +17,8 @@ use Drupal\dhs\Service\HelperFunctions;
  *
  * @Block(
  *   id = "banner_banner",
- *   admin_label = @Translation("banner"),
- *   category = @Translation("pragma"),
+ *   admin_label = @Translation("Banner"),
+ *   category = @Translation("Pragma"),
  * )
  */
 

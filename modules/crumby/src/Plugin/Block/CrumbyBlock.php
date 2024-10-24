@@ -17,7 +17,7 @@ use Drupal\Core\Url;
  * @Block(
  *   id = "crumby_crumby",
  *   admin_label = @Translation("Crumby"),
- *   category = @Translation("cer"),
+ *   category = @Translation("Pragma"),
  * )
  */
 

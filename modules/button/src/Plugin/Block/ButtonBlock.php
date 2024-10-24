@@ -17,7 +17,7 @@ use Drupal\Core\Url;
  * @Block(
  *   id = "dcp_button",
  *   admin_label = @Translation("Button"),
- *   category = @Translation("pragma"),
+ *   category = @Translation("Pragma"),
  * )
  */
 
