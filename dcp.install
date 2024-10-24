@@ -1,7 +1,5 @@
 <?php
 
-use Drupal;
-
 function dcp_install()
 {
   $module_installer = Drupal::service('module_installer');
@@ -17,7 +15,16 @@ function dcp_install()
  */
 function dcp_uninstall()
 {
-  # Uninstall the module
-  $module_handler = Drupal::service('module_installer');
-  $module_handler->uninstall(['dhs', 'crumby']);
+  $module_handler = \Drupal::service('module_handler'); // Use the correct service.
+  $module_installer = \Drupal::service('module_installer'); // Use the installer to uninstall.
+
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['crumby', 'button', 'banner', 'dhs'];
+
+  foreach ($modules_to_uninstall as $module) {
+    // Check if the module exists before trying to uninstall.
+    if ($module_handler->moduleExists($module)) {
+      $module_installer->uninstall([$module], FALSE); // Uninstall without invoking hooks.
+    }
+  }
 }
