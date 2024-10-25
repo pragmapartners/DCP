@@ -1,0 +1,27 @@
+{
+  "name": "dcp",
+  "version": "1.0.0",
+  "description": "This repo contains a collection of Drupal components which can be installed via composer.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "cssnano-preset-advanced": "^7.0.6",
+    "glob": "^11.0.0",
+    "postcss": "^8.4.47",
+    "postcss-custom-media": "^11.0.4",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^6.2.0"
+  }
+}
