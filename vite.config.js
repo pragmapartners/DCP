@@ -5,57 +5,91 @@ import postcssImport from 'postcss-import';
 import postcssNested from 'postcss-nested';
 import postcssCustomMedia from 'postcss-custom-media';
 import autoprefixer from 'autoprefixer';
-import cssnano from 'cssnano'; // Minifier and optimizer
-import fs from 'fs/promises'; // Promises API for file handling
+import cssnano from 'cssnano';
+import fs from 'fs/promises';
 import postcss from 'postcss';
 
 // Helper function to compile and optimize PCSS files
 async function compileCSS(file) {
   const css = await fs.readFile(file, 'utf-8');
-
-  // Create a PostCSS processor with all plugins
   const result = await postcss([
     postcssImport(),
     postcssNested(),
     postcssCustomMedia(),
-    autoprefixer(), // Adds vendor prefixes
-    cssnano({ preset: 'advanced' }), // Minify and optimize CSS
+    autoprefixer(),
+    ...(process.env.NODE_ENV === 'production' ? [cssnano({ preset: 'advanced' })] : []),
   ]).process(css, { from: file });
 
   return result.css;
 }
 
-export default defineConfig(async () => {
-  const pcssFiles = await glob('./modules/*/components/*/*.pcss');
-
-  console.log('PCSS Files:', pcssFiles); // Debugging line
+export default defineConfig(({ command }) => {
+  const isBuild = command === 'build'; // Check if it's a build
 
   return {
     build: {
       rollupOptions: {
-        input: pcssFiles,
+        input: glob.sync('./modules/*/components/*/*.pcss'), // Use PCSS files as input
+        preserveEntrySignatures: false, // Prevent Rollup from expecting an entry point
       },
-      emptyOutDir: false, // Avoid removing existing files
-      assetsInlineLimit: 0, // Emit assets as files, not inline
+      emptyOutDir: false, // Don't wipe output directory
     },
     plugins: [
       {
         name: 'compile-pcss',
-        apply: 'build',
+        apply: 'build', // Run only during build
         async buildStart() {
+          const pcssFiles = glob.sync('./modules/*/components/*/*.pcss');
+          console.log('PCSS Files:', pcssFiles);
+
           for (const file of pcssFiles) {
-            const outputDir = path.dirname(file); // Use the same directory
+            const outputDir = path.dirname(file); // Save CSS next to the PCSS file
             const outputName = `${path.basename(file, '.pcss')}.css`;
             const outputPath = path.join(outputDir, outputName);
 
-            console.log('Processing File:', file.split('/').pop()); // Debugging line
+            console.log(`Processing File: ${file} -> ${outputPath}`);
 
-            // Compile and optimize the CSS
             const optimizedCSS = await compileCSS(file);
 
-            // Write the optimized CSS directly to the original directory
+            // Ensure the output directory exists
+            await fs.mkdir(outputDir, { recursive: true });
+
+            // Write the optimized CSS to the original location
             await fs.writeFile(outputPath, optimizedCSS, 'utf-8');
             console.log(`Optimized CSS written to: ${outputPath}`);
+          }
+        },
+      },
+      {
+        name: 'pcss-hmr',
+        apply: 'serve', // Only apply in dev mode
+        async handleHotUpdate({ file, server }) {
+          if (file.endsWith('.pcss')) {
+            console.log(`Recompiling ${file}...`);
+
+            const css = await compileCSS(file);
+
+            const outputDir = path.dirname(file);
+            const outputName = `${path.basename(file, '.pcss')}.css`;
+            const outputPath = path.join(outputDir, outputName);
+
+            await fs.mkdir(outputDir, { recursive: true });
+
+            await fs.writeFile(outputPath, css, 'utf-8');
+            console.log(`Updated CSS written to: ${outputPath}`);
+
+            server.ws.send({
+              type: 'update',
+              updates: [
+                {
+                  type: 'css-update',
+                  path: outputPath,
+                  timestamp: Date.now(),
+                },
+              ],
+            });
+
+            return []; // Prevent full page reload
           }
         },
       },
@@ -67,8 +101,12 @@ export default defineConfig(async () => {
           postcssNested(),
           postcssCustomMedia(),
           autoprefixer(),
-          cssnano({ preset: 'advanced' }), // Minify and optimize
         ],
+      },
+    },
+    server: {
+      watch: {
+        ignored: ['./modules/**/*.css'], // Avoid watching generated CSS files to prevent loops
       },
     },
   };
