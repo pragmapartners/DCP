@@ -7,12 +7,26 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "start": "concurrently --names \"VITE,STORYBOOK\" --prefix-colors \"green,blue\" \"npm run dev\" \"npm run storybook\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vite": "^5.4.10"
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.3.6",
+    "@storybook/addon-interactions": "^8.3.6",
+    "@storybook/addon-links": "^8.3.6",
+    "@storybook/blocks": "^8.3.6",
+    "@storybook/html": "^8.3.6",
+    "@storybook/html-vite": "^8.3.6",
+    "@storybook/test": "^8.3.6",
+    "concurrently": "^9.0.1",
+    "storybook": "^8.3.6",
+    "vite": "^5.4.10",
+    "vite-plugin-twig-drupal": "^1.4.2"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",

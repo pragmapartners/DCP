@@ -8,6 +8,8 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import fs from 'fs/promises';
 import postcss from 'postcss';
+import twig from 'vite-plugin-twig-drupal';
+import { join } from "node:path"
 
 // Helper function to compile and optimize PCSS files
 async function compileCSS(file) {
@@ -93,6 +95,16 @@ export default defineConfig(({ command }) => {
           }
         },
       },
+      twig({
+        namespaces: {
+          components: join(__dirname, "/modules/*/components/*/"),
+        },
+        functions: {
+          drupal_entity: (twigInstance) => twigInstance.extendFunction("drupal_entity", (entity) => {
+            return '';
+          }),
+        },
+      }),
     ],
     css: {
       postcss: {
