@@ -28,8 +28,7 @@ Finally run the following to install the module
 
 Run the following script from your projects root dir.
 
-`chmod +x web/modules/contrib/dcp/setup-dcp-dev.sh | 
-web/modules/contrib/dcp/setup-dcp-dev.sh`
+`chmod +x ./web/modules/contrib/dcp/setup-dcp-dev.sh && ./web/modules/contrib/dcp/setup-dcp-dev.sh`
 
 The script basically runs through the following steps:
 
@@ -43,3 +42,24 @@ now you can develop while seeing live updates - push - pull - run composer comma
 
 once you have finished developing, commit, make a latest tag, push and finally release the tag.
 you can then switch back to using composer setup.
+
+
+## HOW TO RELEASE
+
+Make your updates, commit then push them, then run the following command to check for the latest tag.
+
+`git --no-pager tag --sort=-creatordate`
+
+Create a new tag from the branch/head/commit that you want to release.
+
+`git tag [tag]`
+
+Then push the tag
+
+`git push origin []`
+
+Then create a new release with the desired tag
+
+`gh release create`
+
+Done. The next time you composer update or install this module you will pull in the new release.
