@@ -81,9 +81,12 @@ final class CrumbyBlock extends BlockBase
   {
     $breadcrumb = $this->build_breadcrumb();
     return [
-      '#theme' => 'crumby',
-      '#breadcrumb' => $breadcrumb,
-      '#separator' => $this->configuration['separator'],
+      '#type' => 'component',
+      '#component' => 'crumby:breadcrumb',
+      '#props' => [
+        'breadcrumb' => $breadcrumb,
+        'separator' => $this->configuration['separator'],
+      ],
     ];
   }
 

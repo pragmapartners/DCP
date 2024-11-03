@@ -74,7 +74,7 @@ final class BannerBlock extends BlockBase
     $form['banner_body'] = [
       '#type' => 'text_format',
       '#title' => $this->t('Body'),
-      '#default_value' => $this->configuration['banner_body']['value'],
+      '#default_value' => $this->configuration['banner_body']['value'] ?? '',
       '#format' => $this->configuration['banner_body']['format'] ?? 'basic_html',
     ];
 
@@ -104,10 +104,19 @@ final class BannerBlock extends BlockBase
     }
 
     return [
-      '#theme' => 'banner',
-      '#banner_image' => $mediaObject ?? [],
-      '#banner_heading' => $this->configuration['banner_heading'],
-      '#banner_body' => $this->configuration['banner_body'],
+      '#type' => 'component',
+      '#component' => 'banner:banner',
+      '#props' => [
+        'banner_image' => $mediaObject ?? [],
+        'banner_heading' => $this->configuration['banner_heading'],
+      ],
+      '#slots' => [
+        'body' => [
+          '#type' => 'processed_text',
+          '#text' => $this->configuration['banner_body']['value'],
+          '#format' => $this->configuration['banner_body']['format'],
+        ],
+      ],
     ];
   }
 }

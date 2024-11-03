@@ -72,8 +72,11 @@ final class ButtonBlock extends BlockBase
   public function build(): array
   {
     return [
-      '#theme' => 'button',
-      '#link' => $this->configuration['link'],
+      '#type' => 'component',
+      '#component' => 'button:button',
+      '#props' => [
+        'link' => $this->configuration['link'],
+      ],
     ];
   }
 }
