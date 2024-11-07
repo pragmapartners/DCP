@@ -6,7 +6,8 @@ function dcp_install()
   $module_installer->install([
     'crumby',
     'button',
-    'banner'
+    'banner',
+    'marquee'
   ]);
 }
 
@@ -19,7 +20,7 @@ function dcp_uninstall()
   $module_installer = \Drupal::service('module_installer'); // Use the installer to uninstall.
 
   // List of modules to uninstall.
-  $modules_to_uninstall = ['crumby', 'button', 'banner', 'dhs'];
+  $modules_to_uninstall = ['crumby', 'button', 'banner', 'dhs', 'marquee'];
 
   foreach ($modules_to_uninstall as $module) {
     // Check if the module exists before trying to uninstall.
