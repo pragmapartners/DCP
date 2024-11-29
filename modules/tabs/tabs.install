@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function tabs_schema()
+{
+  $schema['tabs_data'] = [
+    'description' => 'Stores tab data for the Tabs block.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary Key: Unique tab ID.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'block_id' => [
+        'description' => 'The ID of the block instance.',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ],
+      'title' => [
+        'description' => 'Title of the tab.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'content' => [
+        'description' => 'Content of the tab.',
+        'type' => 'text',
+        'not null' => FALSE,
+      ],
+      'format' => [
+        'description' => 'Text format of the content.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+      'icon' => [
+        'description' => 'Icon of the tab.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'block_id' => ['block_id'],
+    ],
+  ];
+
+  return $schema;
+}

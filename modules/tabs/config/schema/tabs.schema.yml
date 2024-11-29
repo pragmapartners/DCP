@@ -1,0 +1,7 @@
+block.settings.tabs:
+  type: block_settings
+  label: 'Tabs block'
+  mapping:
+    example:
+      type: string
+      label: Example
