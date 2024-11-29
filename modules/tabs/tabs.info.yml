@@ -1,5 +1,5 @@
-name: 'Tabs'
+name: "Tabs"
 type: module
-description: '@todo Add description.'
-package: '@todo Add package'
+description: "Provides a tab block for layout builder"
+package: "Pragma"
 core_version_requirement: ^10 || ^11
