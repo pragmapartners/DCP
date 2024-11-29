@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Provides a tabs block.
  */
 #[Block(
-  id: 'tabs',
+  id: 'dcp_tabs',
   admin_label: new TranslatableMarkup('Tabs'),
   category: new TranslatableMarkup('Pragma'),
 )]
