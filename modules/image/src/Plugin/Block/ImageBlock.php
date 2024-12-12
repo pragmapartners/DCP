@@ -191,7 +191,7 @@ final class ImageBlock extends BlockBase implements ContainerFactoryPluginInterf
       '#type' => 'component',
       '#component' => 'dcp_image:image',
       '#props' => [
-        'media' => $media_entity ?? [],
+        'media' => $media_entity,
         'fullwidth' => $query['fullwidth'] ?? FALSE,
       ],
     ];
