@@ -98,6 +98,7 @@ final class BannerBlock extends BlockBase
   {
     if ($this->configuration['banner_image']) {
       $alt_logo_mid = $this->configuration['banner_image'];
+      // @phpstan-ignore class.notFound
       $media_entity = Media::load($alt_logo_mid);
       $mediaHelper = \Drupal::service('dhs.helper_functions');
       $mediaObject = $mediaHelper->buildMediaObject($media_entity);

@@ -12,6 +12,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Component\Uuid\UuidInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\filter\FilterFormatInterface;
 
 /**
  * Provides a tabs block.
@@ -135,6 +136,7 @@ final class TabsBlock extends BlockBase implements ContainerFactoryPluginInterfa
         '#type' => 'text_format',
         '#title' => $this->t('Content'),
         '#default_value' => $tab->content,
+        // @phpstan-ignore function.notFound
         '#format' => $tab->format ?? filter_default_format(),
       ];
       $i++;
@@ -163,6 +165,7 @@ final class TabsBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $form['tabs'][$j]['content'] = [
         '#type' => 'text_format',
         '#title' => $this->t('Content'),
+        // @phpstan-ignore function.notFound
         '#format' => filter_default_format(),
       ];
     }
