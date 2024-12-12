@@ -1,0 +1,11 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/11.1.x/core/modules/sdc/src/metadata.schema.json
+name: Image
+description: Image component
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    media:
+      type: array
+      title: Media

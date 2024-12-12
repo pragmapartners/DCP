@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function dcp_image_schema()
+{
+  $schema['dcp_image_data'] = [
+    'description' => 'Stores image data for the Image block.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary Key: Unique image ID.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'block_id' => [
+        'description' => 'The ID of the block instance.',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ],
+      'media' => [
+        'description' => 'Media of the image.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'fullwidth' => [
+        'description' => 'Whether the image is fullwidth.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'block_id' => ['block_id'],
+    ],
+  ];
+
+
+  return $schema;
+}
