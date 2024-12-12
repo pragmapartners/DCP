@@ -1,0 +1,205 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Call to static method load\(\) on an unknown class Drupal\\media\\Entity\\Media\.$#'
+			identifier: class.notFound
+			count: 1
+			path: modules/banner/src/Plugin/Block/BannerBlock.php
+
+		-
+			message: '#^Method Drupal\\banner\\Plugin\\Block\\BannerBlock\:\:blockForm\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/banner/src/Plugin/Block/BannerBlock.php
+
+		-
+			message: '#^Method Drupal\\banner\\Plugin\\Block\\BannerBlock\:\:blockForm\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/banner/src/Plugin/Block/BannerBlock.php
+
+		-
+			message: '#^Method Drupal\\banner\\Plugin\\Block\\BannerBlock\:\:blockSubmit\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/banner/src/Plugin/Block/BannerBlock.php
+
+		-
+			message: '#^Method Drupal\\banner\\Plugin\\Block\\BannerBlock\:\:build\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/banner/src/Plugin/Block/BannerBlock.php
+
+		-
+			message: '#^Method Drupal\\banner\\Plugin\\Block\\BannerBlock\:\:defaultConfiguration\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/banner/src/Plugin/Block/BannerBlock.php
+
+		-
+			message: '#^Method Drupal\\button\\Plugin\\Block\\ButtonBlock\:\:blockForm\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/button/src/Plugin/Block/ButtonBlock.php
+
+		-
+			message: '#^Method Drupal\\button\\Plugin\\Block\\ButtonBlock\:\:blockForm\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/button/src/Plugin/Block/ButtonBlock.php
+
+		-
+			message: '#^Method Drupal\\button\\Plugin\\Block\\ButtonBlock\:\:blockSubmit\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/button/src/Plugin/Block/ButtonBlock.php
+
+		-
+			message: '#^Method Drupal\\button\\Plugin\\Block\\ButtonBlock\:\:build\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/button/src/Plugin/Block/ButtonBlock.php
+
+		-
+			message: '#^Method Drupal\\button\\Plugin\\Block\\ButtonBlock\:\:defaultConfiguration\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/button/src/Plugin/Block/ButtonBlock.php
+
+		-
+			message: '#^Method Drupal\\crumby\\Plugin\\Block\\CrumbyBlock\:\:blockForm\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/crumby/src/Plugin/Block/CrumbyBlock.php
+
+		-
+			message: '#^Method Drupal\\crumby\\Plugin\\Block\\CrumbyBlock\:\:blockForm\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/crumby/src/Plugin/Block/CrumbyBlock.php
+
+		-
+			message: '#^Method Drupal\\crumby\\Plugin\\Block\\CrumbyBlock\:\:blockSubmit\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/crumby/src/Plugin/Block/CrumbyBlock.php
+
+		-
+			message: '#^Method Drupal\\crumby\\Plugin\\Block\\CrumbyBlock\:\:build\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/crumby/src/Plugin/Block/CrumbyBlock.php
+
+		-
+			message: '#^Method Drupal\\crumby\\Plugin\\Block\\CrumbyBlock\:\:build_breadcrumb\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: modules/crumby/src/Plugin/Block/CrumbyBlock.php
+
+		-
+			message: '#^Method Drupal\\crumby\\Plugin\\Block\\CrumbyBlock\:\:defaultConfiguration\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/crumby/src/Plugin/Block/CrumbyBlock.php
+
+		-
+			message: '#^Method Drupal\\marquee\\Plugin\\Block\\MarqueeBlock\:\:blockForm\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/marquee/src/Plugin/Block/MarqueeBlock.php
+
+		-
+			message: '#^Method Drupal\\marquee\\Plugin\\Block\\MarqueeBlock\:\:blockForm\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/marquee/src/Plugin/Block/MarqueeBlock.php
+
+		-
+			message: '#^Method Drupal\\marquee\\Plugin\\Block\\MarqueeBlock\:\:blockSubmit\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/marquee/src/Plugin/Block/MarqueeBlock.php
+
+		-
+			message: '#^Method Drupal\\marquee\\Plugin\\Block\\MarqueeBlock\:\:build\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/marquee/src/Plugin/Block/MarqueeBlock.php
+
+		-
+			message: '#^Method Drupal\\marquee\\Plugin\\Block\\MarqueeBlock\:\:defaultConfiguration\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/marquee/src/Plugin/Block/MarqueeBlock.php
+
+		-
+			message: '#^Function filter_default_format not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php
+
+		-
+			message: '#^Method Drupal\\tabs\\Plugin\\Block\\TabsBlock\:\:__construct\(\) has parameter \$configuration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php
+
+		-
+			message: '#^Method Drupal\\tabs\\Plugin\\Block\\TabsBlock\:\:addTab\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php
+
+		-
+			message: '#^Method Drupal\\tabs\\Plugin\\Block\\TabsBlock\:\:addTab\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php
+
+		-
+			message: '#^Method Drupal\\tabs\\Plugin\\Block\\TabsBlock\:\:ajaxCallback\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php
+
+		-
+			message: '#^Method Drupal\\tabs\\Plugin\\Block\\TabsBlock\:\:ajaxCallback\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php
+
+		-
+			message: '#^Method Drupal\\tabs\\Plugin\\Block\\TabsBlock\:\:blockForm\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php
+
+		-
+			message: '#^Method Drupal\\tabs\\Plugin\\Block\\TabsBlock\:\:blockForm\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php
+
+		-
+			message: '#^Method Drupal\\tabs\\Plugin\\Block\\TabsBlock\:\:blockSubmit\(\) has parameter \$form with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php
+
+		-
+			message: '#^Method Drupal\\tabs\\Plugin\\Block\\TabsBlock\:\:build\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php
+
+		-
+			message: '#^Method Drupal\\tabs\\Plugin\\Block\\TabsBlock\:\:create\(\) has parameter \$configuration with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php
+
+		-
+			message: '#^Method Drupal\\tabs\\Plugin\\Block\\TabsBlock\:\:defaultConfiguration\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: modules/tabs/src/Plugin/Block/TabsBlock.php

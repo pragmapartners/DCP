@@ -1,0 +1,19 @@
+<?php
+
+function dcp_theme($existing, $type, $theme, $path)
+{
+  return [
+    'block__bare' => [
+      'template' => 'block--bare',
+      'base hook' => 'block'
+    ],
+  ];
+}
+
+function dcp_theme_suggestions_block_alter(array &$suggestions, array $variables): void
+{
+  $plugin_id = $variables['elements']['#plugin_id'] ?? NULL;
+  if ($plugin_id && str_contains($plugin_id, 'dcp_')) {
+    $suggestions[] = 'block__bare';
+  }
+}
