@@ -2,10 +2,12 @@
 
 function dcp_theme($existing, $type, $theme, $path)
 {
+
   return [
     'block__bare' => [
       'template' => 'block--bare',
-      'base hook' => 'block'
+      'base hook' => 'block',
+
     ],
   ];
 }

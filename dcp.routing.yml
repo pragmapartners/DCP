@@ -1,0 +1,7 @@
+dcp.settings_form:
+  path: "/admin/config/development/dcp"
+  defaults:
+    _form: '\Drupal\dcp\Form\DcpSettingsForm'
+    _title: "DCP Settings"
+  requirements:
+    _permission: "administer site configuration"

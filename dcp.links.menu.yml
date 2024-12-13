@@ -1,0 +1,5 @@
+dcp.settings:
+  title: "DCP Settings"
+  description: "Configure DCP module settings."
+  route_name: dcp.settings_form
+  parent: system.admin_config_development
