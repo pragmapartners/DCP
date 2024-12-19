@@ -9,3 +9,6 @@ props:
     media:
       type: array
       title: Media
+    fullwidth:
+      type: boolean
+      title: Is fullwidth?

@@ -1,1 +1,6 @@
-{{media}}
+{% set classes = [
+  fullwidth ? 'image--fullwidth' : 'image-contained',
+] %}
+<figure{{attributes.addClass(classes)}}>
+	{{media}}
+</figure>
