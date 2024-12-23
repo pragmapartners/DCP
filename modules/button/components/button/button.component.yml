@@ -1,9 +1,42 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
 name: Button
+description: "Buttons allow the user to take actions or make choices."
+
 props:
   type: object
   properties:
-    attributes:
-      type: Drupal\Core\Template\Attribute
+    title:
+      type: string
+      title: Title
     link:
       type: array
+      title: Link
+    outline:
+      title: "Outlined?"
+      description: "It is possible to outline any button?"
+      type: boolean
+    size:
+      title: Size
+      description: "It is possible to set the size of buttons."
+      type: string
+      enum:
+        - xs
+        - sm
+        - md
+        - lg
+    wide:
+      title: "Wide?"
+      description: "It is possible to display a wide button."
+      type: boolean
+    disabled:
+      title: "Disable?"
+      description: "It is possible to set button as disabled?"
+      type: boolean
+    square:
+      title: "Square?"
+      description: "It is possible to display button as squared?"
+      type: boolean
+    circle:
+      title: "Circle?"
+      description: "It is possible to display button as circled?"
+      type: boolean

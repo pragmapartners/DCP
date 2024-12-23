@@ -1,3 +1,8 @@
-.button {
-  background: yellow;
+@import "assets/_base.css";
+
+@layer theme {
+  .pragma-button {
+    --_button-background-color: var(--pragma-blue-light);
+    --_button-text-color: var(--white);
+  }
 }

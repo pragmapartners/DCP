@@ -23,20 +23,14 @@
     background-color: var(--_button-background-color);
     cursor: pointer;
     color: var(--_button-text-color);
-  }
-    .pragma-button:hover {
+    &:hover {
       border-color: var(--_button-hover-border-color);
       background-color: var(--_button-hover-background-color);
       text-decoration: none;
       color: var(--_button-hover-text-color);
     }
-    .pragma-button:visited {
+    &:visited {
       color: var(--_button-text-color);
     }
-}
-@layer theme {
-  .pragma-button {
-    --_button-background-color: var(--pragma-blue-light);
-    --_button-text-color: var(--white);
   }
 }

@@ -1,12 +1,1 @@
 <?php
-
-function button_theme($existing, $type, $theme, $path)
-{
-  return [
-    'button' => [
-      'variables' => [
-        'link' => [],
-      ],
-    ],
-  ];
-}
