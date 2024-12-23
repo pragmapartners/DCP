@@ -44,3 +44,29 @@ function _build_sdc_data_props(
 
   return $props;
 }
+
+function dcp_preprocess_menu_local_task(&$variables)
+{
+  // dump($variables);
+  $link = $variables['link'];
+  $variables['link'] = _build_button_component($link);
+}
+
+function _build_button_component($link)
+{
+  $button = [
+    '#type' => 'component',
+    '#component' => 'pragma:button',
+    '#props' => [
+      'link' => $link,
+      'outline' => FALSE,
+      'size' => 'md',
+      'wide' => FALSE,
+      'disabled' => FALSE,
+      'square' => FALSE,
+      'circle' => FALSE,
+    ],
+  ];
+
+  return $button;
+}
