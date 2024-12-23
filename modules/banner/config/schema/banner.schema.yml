@@ -1,4 +1,4 @@
-block.settings.banner_banner:
+block.settings.banner:
   type: block_settings
   label: 'Banner block'
   mapping:

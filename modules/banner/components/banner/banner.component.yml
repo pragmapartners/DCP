@@ -1,12 +1,49 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/11.1.x/core/modules/sdc/src/metadata.schema.json
 name: Banner
-description: A banner component that renders out slide components.
+description: A banner component that renders a customizable banner with buttons.
 props:
   type: object
   properties:
     attributes:
-      type: Drupal\Core\Template\Attribute
-    banner:
       type: object
-      title: Item
-      description: An array of items to display in the banner
+      description: A set of HTML attributes to apply to the banner.
+      properties:
+        class:
+          type: array
+          items:
+            type: string
+          description: A list of CSS classes to apply.
+    banner_heading:
+      type: string
+      description: The heading text for the banner.
+    banner_body:
+      type: string
+      description: The body content of the banner.
+    body_format:
+      type: string
+      description: The text format for the banner body (e.g., basic_html, full_html).
+    banner_color:
+      type: string
+      description: The predefined color theme for the banner.
+      enum:
+        - default
+        - custom
+    banner_color_picker:
+      type: string
+      description: A hex code for a custom banner color (if applicable).
+    buttons:
+      type: array
+      description: A list of buttons to display in the banner.
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: The unique identifier for the button.
+          button_title:
+            type: string
+            description: The label for the button.
+          button_url:
+            type: string
+            description: The URL the button links to.
+            format: uri

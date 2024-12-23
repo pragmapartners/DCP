@@ -1,8 +1,9 @@
 name: 'Banner'
 type: module
-description: 'Creates a banner with image, heading and body fields'
+description: 'Banner module'
 package: 'Pragma'
 core_version_requirement: ^10 || ^11
 dependencies:
   - 'drupal:dhs'
   - 'drupal:twig_tweak'
+  - 'drupal:linkit'

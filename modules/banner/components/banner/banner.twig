@@ -2,12 +2,14 @@
   'banner',
   'fullwidth',
   'banner-layout--' ~ banner.display,
+  banner_color ? banner_color|clean_class,
 	banner_image.uri ? 'has-image',
 ] %}
-
+{% set banner_background_style = banner_color_picker ? '--banner-background-color: ' ~ banner_color_picker ~ ';' %}
 {% set banner_attributes = create_attribute(attributes) %}
 
-<section{{banner_attributes.addClass(banner_classes)}}>
+<section{{banner_attributes.addClass(banner_classes).setAttribute('style', banner_background_style)}}>
+  {# building the image #}
 	{% set background_image = {
     '#theme': 'image',
     '#uri': banner_image.uri,
@@ -17,23 +19,30 @@
     },
   } %}
 
-	{% if banner_image.uri %}
-		<div class="image--wrapper">
-			{{ background_image }}
-		</div>
-	{% endif %}
+  <div class="image--wrapper">
+    {% if banner_image.uri %}
+        {{ background_image }}
+    {% endif %}
+  </div>
 
-	<div class="banner--content">
-    <div class="container">
-      {{ drupal_entity('block', 'crumby') }}
-			<div class="banner--content-container">
-        <h1 class="banner--title">
-          {{ banner_heading|raw }}
-        </h1>
-				<div class="banner--body">
-					{{ banner_body|raw }}
-				</div>
-			</div>
+	<div class="banner--content container">
+    {# TODO: passed menu is wrong? menu is build in bannerblock.php. #}
+    {% include 'crumby:breadcrumb' with { breadcrumb: [menu] } only %}
+    <div class="banner--content-container">
+      <h1 class="banner--title">
+        {{ banner_heading|raw }}
+      </h1>
+      <div class="banner--body">
+          {{ banner_body|raw }}
+          <div class="banner--links">
+          {% if buttons[0] %}
+            {% for link in buttons %}
+              {# TODO: button component? #}
+              {% include 'button:button' with {text: link.title, link: [link.url]} only %}
+            {% endfor %}
+          {% endif %}
+          </div>
+      </div>
     </div>
 	</div>
 </section>
