@@ -2,7 +2,7 @@
 
 namespace Drupal\dcp\Utils;
 
-class HelperFunctions
+class DCPHelpers
 {
   public static function buildSdcDataProps(
     array $block_config,
