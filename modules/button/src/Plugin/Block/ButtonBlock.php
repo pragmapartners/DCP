@@ -9,6 +9,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
+use Drupal\dcp\Utils\Helpers;
 
 #[Block(
   id: 'dcp_button',
@@ -189,7 +190,7 @@ final class ButtonBlock extends BlockBase
 
     $link_attributes = new Attribute();
 
-    foreach (_build_sdc_data_props($config, ['link', 'link_title'], ['outline', 'wide', 'disabled', 'square', 'circle']) as $key => $value) {
+    foreach (HelperFunctions::buildSdcDataProps($config, ['link', 'link_title'], ['outline', 'wide', 'disabled', 'square', 'circle']) as $key => $value) {
       $link_attributes->setAttribute($key, $value);
     }
 
